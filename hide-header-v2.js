@@ -36,6 +36,7 @@ $('.site-header').on('sticky-end', function(){
     
     // Then let's unstick it - not sure if this is necessary but we don't have time to go through the sticky code itself
     $(".site-header").unstick();
+    hasStuck = false;
   }  
 });
 
