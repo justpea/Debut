@@ -78,9 +78,11 @@ function hasScrolled() {
       // We also only want to stick it if it's not already stuck, so we'll check for that too
       if (st > totalHeaderHeight && !hasStuck){
         
-        // Nav bar is no longer in view and it has not been stuck, let's do it
-        $(".site-header").sticky({zIndex:999999});
-        hasStuck = true;
+        // Nav bar is no longer in view, it has not been stuck, and we're not at the bottom of the page, let's do it
+        if (st + $(window).height() < $(document).height()){
+          $(".site-header").sticky({zIndex:999999});
+          hasStuck = true;
+        }
       }
     }
   	
